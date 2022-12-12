@@ -1,5 +1,5 @@
 {
-  "name": "Registraap",
+  "name": "registraap",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -20,12 +20,20 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@capacitor/app": "4.0.1",
+    "@capacitor/camera": "^4.1.3",
     "@capacitor/core": "4.1.0",
     "@capacitor/haptics": "4.0.1",
     "@capacitor/keyboard": "4.0.1",
     "@capacitor/status-bar": "4.0.1",
+    "@ionic-native/barcode-scanner": "^5.36.0",
+    "@ionic-native/qr-scanner": "^5.36.0",
     "@ionic/angular": "^6.1.9",
+    "@ionic/pwa-elements": "^3.1.1",
+    "@ionic/storage-angular": "^3.0.6",
+    "cordova-plugin-qrscanner": "^3.0.1",
     "ionicons": "^6.0.3",
+    "phonegap-plugin-barcodescanner": "^8.1.0",
+    "qrcode": "^1.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -36,7 +44,7 @@
     "@angular-eslint/eslint-plugin": "~13.0.1",
     "@angular-eslint/eslint-plugin-template": "~13.0.1",
     "@angular-eslint/template-parser": "~13.0.1",
-    "@angular/cli": "14.2.1",
+    "@angular/cli": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/compiler-cli": "^14.0.0",
     "@angular/language-service": "^14.0.0",
@@ -64,5 +72,8 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.7.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "main": "index.js",
+  "keywords": [],
+  "license": "ISC"
 }
