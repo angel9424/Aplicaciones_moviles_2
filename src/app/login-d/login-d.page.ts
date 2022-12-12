@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-d',
@@ -8,12 +8,12 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./login-d.page.scss'],
 })
 export class LoginDPage implements OnInit {
-  usuario    : string;
-  contrasena : string;
+  usuario    : any;
+  contrasena : any;
   mensaje    : String;
 
   constructor(private alertController: ToastController,
-    private toastController: ToastController) { }
+    private toastController: ToastController, private router:Router) { }
 
   ngOnInit() {
   }
@@ -24,31 +24,45 @@ export class LoginDPage implements OnInit {
       
       const toast = await this.toastController.create({
         message : "Ingrese algún usuario",
-        duration: 2000
+        duration: 1000,
       })
       toast.present();
+      return;
     }
+
     else if(contrasena.value == "")
     {
       const toast = await this.toastController.create({
         message : "Ingrese contraseña",
-        duration: 2000
+        duration: 1000
       })
       toast.present();
+      return;
     }
-    else
+    else if(usuario.value != "n.luna@duoc.profesor.cl")
     {
-      this.mensaje = "";
-      const alert = await this.alertController.create({
-        header    : 'Mensaje de la app',
-        message   : 'Los datos fueron guardados con éxito',
-        buttons   : ['Ok'],
-      });
-      await alert.present();
+      const toast = await this.toastController.create({
+        message : "Usuario invalido",
+        duration: 1000
+      })
+      toast.present();
+      return;
     }
+    else if(contrasena.value != "1234")
+    {
+      const toast = await this.toastController.create({
+        message : "Contraseña invalida",
+        duration: 1000
+      })
+      toast.present();
+      return;
+    }
+
+    else if (usuario.value == "n.luna@duoc.profesor.cl", contrasena.value == "1234")
+    {
+      this.router.navigate(['/options-d']);
+    };            
   }
-  
-
-
 }
+  
 

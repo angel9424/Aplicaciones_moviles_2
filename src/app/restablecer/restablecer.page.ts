@@ -4,6 +4,7 @@ import { FormGroup,
   Validators,
   FormBuilder
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -16,11 +17,13 @@ export class RestablecerPage implements OnInit {
   formularioRestablecer: FormGroup;
 
   constructor(public fb: FormBuilder,
-    public alertController: AlertController) {
+    public alertController: AlertController,
+    private router:Router) {
     this.formularioRestablecer = this.fb.group({
       'nombre' : new FormControl("",Validators.required),
       'password': new FormControl("",Validators.required),
-      'confirmacionPassword': new FormControl("",Validators.required)
+      'confirmacionPassword': new FormControl("",Validators.required
+      )
     });
    }
 
@@ -38,6 +41,10 @@ export class RestablecerPage implements OnInit {
 
         await alert.present();
         return;
+      }
+      else 
+      {
+        this.router.navigate(['/log-alumno'])
       }
       var usuario = {
         nombre: f.nombre,

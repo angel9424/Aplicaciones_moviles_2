@@ -5,29 +5,48 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="formularioLogin">
-    <ion-avatar>
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
-    </ion-avatar>
+    <br>
     <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input formControlName="nombre"></ion-input>
+      <ion-avatar class="align-text-center">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" style=>
+      </ion-avatar>
+      <ion-label></ion-label>
     </ion-item>
+
+    <br>
+       
+    <ion-item> 
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input #usuario type="text" placeholder="Angel" #txtUsuario></ion-input>
+    </ion-item>
+    
     <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input #password type="password" placeholder="*******" #txtPassword></ion-input>
     </ion-item>
-  </form>
+
+
+
   <br>
-  <ion-button (click)="ingresar()">
-    Ingresar
-  </ion-button>
+  <ion-button [routerLink]="['/restablecer']"  color="warning" shape="round">Recuperar Clave</ion-button>
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button [routerLink]="['/home']"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
-    <ion-button [routerLink]="['/restablecer']">Restablecer Contraseña</ion-button>
-  </ion-toolbar> 
+    <ion-button [routerLink]="['/home']"  color="danger" shape="round">
+      <ion-icon name="arrow-back-outline" ></ion-icon>
+    </ion-button>
+    
+    <ion-button (click)="agregar(txtUsuario, txtPassword)" slot="" color="secondary" shape="round">
+      <ion-icon slot="inon-center" name="add-circle"> </ion-icon>
+    </ion-button>
+
+    <ion-button [routerLink]="['/usuarios']"  slot="end" color="success" shape="round">
+      <ion-icon name="arrow-forward" ></ion-icon> 
+       
+    </ion-button>
+  </ion-toolbar>
+    
+     
 </ion-footer>
