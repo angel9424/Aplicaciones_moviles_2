@@ -10,7 +10,7 @@
   <ion-list>
     <div *ngFor="let aux of listado" [routerLink]="['../posts/', aux.id]">
       <ion-item>
-        <ion-label>{{aux.name}} </ion-label>
+        <ion-label>{{aux.nombre}} </ion-label>
       </ion-item>
     </div>
   </ion-list>
@@ -24,10 +24,7 @@
       <ion-icon slot="icon-only" name="home"></ion-icon> 
     </ion-button>
 
-    <ion-button [routerLink]="['/camara-a']" slot="end" color="light" shape="round">
-      <ion-icon slot="icon-only" name="camera"></ion-icon> 
-    </ion-button>
-    
+
   </ion-toolbar> 
 
 </ion-footer>

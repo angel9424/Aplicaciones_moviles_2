@@ -1,54 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Menú de asistencia</ion-title>
+    <ion-title>Genere su codigo QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
- <br>
- <br>
-  <ion-list>
-    <ion-item>
-      <ion-select #opciones cancelText="cancelar" interface="action-sheet" placeholder="Seleccione la clase">
-        <ion-select-option value="1">Aplicaciones mobiles</ion-select-option>
-        <ion-select-option value="2">Arquitectura de software</ion-select-option>
-        <ion-select-option value="3">Calidad de software</ion-select-option>
-      </ion-select>
-    </ion-item >
-  </ion-list>
- 
+  <div *ngIf="listado.length > 0 ">
 
- <br>
- <br>
-  <ion-list>
-    <ion-item >
-      <ion-select #opcioness cancelText="cancelar" interface="action-sheet" placeholder="Seleccione la sección">
-        <ion-select-option value="4">001D</ion-select-option>
-        <ion-select-option value="5">002D</ion-select-option>
-        <ion-select-option value="6">003D</ion-select-option>
-      </ion-select>
-      
-    </ion-item>
-  </ion-list>
-  <br>
-
-
+    <ion-list>
+      <div *ngFor="let aux of listado" [routerLink]="['../qr/', aux.id]">
+        <ion-item>
+          <ion-label>{{aux.nombre}} </ion-label>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+  
 
   <br>
-  <br>
 
-  <ion-button (click)="Aceptar(opciones, opcioness)" color="success"  shape="round" expand="block">
-    <ion-icon slot="end" name="qr-code-outline"></ion-icon>
-    Generar QR
-  </ion-button>
+
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar> 
-    <ion-button [routerLink]="['/login-d']" color="danger" shape="round">
-      <ion-icon slot="icon-only" name="arrow-back"></ion-icon> 
-    </ion-button>  
+    <ion-button [routerLink]="['/home']" color="danger" shape="round">
+      <ion-icon slot="icon-only" name="home"></ion-icon> 
+    </ion-button>
+
+ 
   </ion-toolbar> 
 </ion-footer>

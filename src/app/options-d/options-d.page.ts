@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import {Router} from '@angular/router';
-
+import { ApirestService } from '../apirest.service';
 
 @Component({
   selector: 'app-options-d',
@@ -15,38 +15,19 @@ export class OptionsDPage implements OnInit {
   mensaje    : String;
 
   constructor(private alertController: ToastController,
-    private toastController: ToastController, private router:Router) { }
+    private toastController: ToastController, private router:Router, private api:ApirestService) { }
+    listado = [];
 
-  ngOnInit() {
-  }
-    async Aceptar(opciones: HTMLInputElement, opcioness: HTMLInputElement)
-  {
-    if(opciones.value == "")
-    {
-      
-      const toast = await this.toastController.create({
-        message : "Llene todos los campos",
-        duration: 1000,
-      })
-      toast.present();
-      return;
+    ngOnInit() {
+      this.listar(); 
     }
-
-    else if(opcioness.value == "")
+    listar()
     {
-      const toast = await this.toastController.create({
-        message : "Ingrese contraseña",
-        duration: 1000
-      })
-      toast.present();
-      return;
+      this.api.getUsersp(); // carga los datos a listado del servicio
+      this.listado = this.api.listado;
     }
+  
 
-    else 
-    {
-      this.router.navigate(['/qr']);
-    };            
-  }
   
    
 }

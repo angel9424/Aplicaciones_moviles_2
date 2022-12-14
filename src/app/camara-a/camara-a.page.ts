@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-
 
 @Component({
   selector: 'app-camara-a',
@@ -10,16 +8,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 })
 export class CamaraAPage implements OnInit {
   picture: string;
-  code: any;
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  constructor() { }
 
   async takePicture() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.code=barcodeData.text;
-      console.log('Barcode data', this.code);
-     }).catch(err => {
-         console.log('Error en qr', err);
-     });
     const image = await Camera.getPhoto({
       quality: 100,
       allowEditing: false,
@@ -30,18 +21,7 @@ export class CamaraAPage implements OnInit {
   }
 
   ngOnInit() {
-    
-  }
-
-  Scan(){
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.code=barcodeData.text;
-      console.log('Barcode data', this.code);
-     }).catch(err => {
-         console.log('Error en qr', err);
-     });
   }
 }
-
  
 

@@ -11,14 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 // agregar(import) la api descargada
 import { IonicStorageModule } from '@ionic/storage-angular'
 
-//qrscanner
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
             IonicStorageModule.forRoot()],
-  providers: [BarcodeScanner,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

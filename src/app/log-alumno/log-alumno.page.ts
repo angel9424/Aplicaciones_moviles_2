@@ -39,7 +39,7 @@ export class LogAlumnoPage  {
      else if(txtPassword.value.trim().length != 1234 )
     {
       const toast = await this.toast.create({
-        message: 'Contraseña incorrecta o invalida intente con: 1234',
+        message: 'Contraseña incorrecta ',
         duration: 2000,
         color: "danger",
         position: "middle"
@@ -47,10 +47,10 @@ export class LogAlumnoPage  {
       toast.present(); 
       return; 
     }
-    else if(txtPassword.value.trim().length == 0 )
+    else if(txtPassword.value.trim().length == 0)
     {
       const toast = await this.toast.create({
-        message: 'Contraseña incorrecta o invalida intente con: 1234',
+        message: 'Contraseña incorrecta o invalida intente denuevo',
         duration: 2000,
         color: "danger",
         position: "middle"
@@ -77,36 +77,49 @@ export class LogAlumnoPage  {
     txtPassword.value = "";
    }
 
-  // async siguiente(txtUsuario: HTMLInputElement, txtPassword:HTMLInputElement)
-  // {
-    
-  //   if(txtPassword.value.trim().length != 1234)
-  //   {
-  //     const toast = await this.toast.create({
-  //       message: 'Clave invalida',
-  //       duration: 2000,
-  //       color: "danger",
-  //       position: "middle"
-  //     });
-  //     toast.present(); 
-  //     return;
-  //   }
-  //   else if(txtPassword.value.trim().length == 0 )
-  //   {
-  //     const toast = await this.toast.create({
-  //       message: 'Contraseña incorrecta o invalida intente con: 1234',
-  //       duration: 2000,
-  //       color: "danger",
-  //       position: "middle"
-  //     });
-  //     toast.present(); 
-  //     return; 
-  //   }
-  //   else (txtPassword.value.trim().length == 1234 )
-  //   {
-  //     this.router.navigate(['/usuarios']);
-  //   };  
+   
 
-  // }
+   async siguiente(txtUsuario: HTMLInputElement, txtPassword:HTMLInputElement)
+   {
+    
+    if(txtUsuario.value == "")
+    {
+      const toast = await this.toast.create({
+        message: 'Ingrese un usuario',
+        duration: 2000,
+        color: "danger",
+        position: "middle"
+      });
+      toast.present(); 
+      return;
+   }
+   else if(txtPassword.value != "1234")
+     {
+       const toast = await this.toast.create({
+         message: 'Clave invalida',
+         duration: 2000,
+         color: "danger",
+         position: "middle"
+       });
+       toast.present(); 
+       return;
+    }
+    else if(txtUsuario.value != "z.@duocuc.cl")
+    {
+      const toast = await this.toast.create({
+        message: 'Usuario invalido',
+        duration: 2000,
+        color: "danger",
+        position: "middle"
+      });
+      toast.present(); 
+      return;
+   }
+     else (txtUsuario.value == "z.@duocuc.cl", txtPassword.value == "1234" )
+     {
+       this.router.navigate(['/usuarios']);
+     };  
+
+   }
   
 }

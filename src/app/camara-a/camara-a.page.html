@@ -1,18 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>camara-a</ion-title>
+    <ion-title>Scanner</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block" (click)="takePicture()">Take Picture</ion-button>
+  <ion-button expand="block" (click)="takePicture()">Escanear</ion-button>
   <img [src]="picture" />
-  <br>
-  <ion-button (click)="scan()"> Escaneo QR</ion-button>
-  {{code}}
 </ion-content>
-
-
 
 <ion-footer>
   <ion-toolbar> 

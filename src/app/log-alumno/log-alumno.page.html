@@ -17,7 +17,7 @@
        
     <ion-item> 
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input #usuario type="text" placeholder="Angel" #txtUsuario></ion-input>
+      <ion-input #usuario type="text" placeholder= "z.@duocuc.cl" #txtUsuario></ion-input>
     </ion-item>
     
     <ion-item>
@@ -42,7 +42,7 @@
       <ion-icon slot="inon-center" name="add-circle"> </ion-icon>
     </ion-button>
 
-    <ion-button [routerLink]="['/usuarios']"  slot="end" color="success" shape="round">
+    <ion-button  (click)="siguiente(txtUsuario, txtPassword)" slot="end" color="success" shape="round">
       <ion-icon name="arrow-forward" ></ion-icon> 
        
     </ion-button>

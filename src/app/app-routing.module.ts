@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./options-a/options-a.module').then( m => m.OptionsAPageModule)
   },
   {
-    path: 'qr',
+    path: 'qr/:id',
     loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
   },
   {

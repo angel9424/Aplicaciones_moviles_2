@@ -39,7 +39,7 @@ export class LoginDPage implements OnInit {
       toast.present();
       return;
     }
-    else if(usuario.value != "n.luna@duoc.profesor.cl")
+    else if(usuario.value != "p.@pro.duocuc.cl")
     {
       const toast = await this.toastController.create({
         message : "Usuario invalido",
@@ -58,7 +58,7 @@ export class LoginDPage implements OnInit {
       return;
     }
 
-    else if (usuario.value == "n.luna@duoc.profesor.cl", contrasena.value == "1234")
+    else if (usuario.value == "p.@pro.duocuc.cl", contrasena.value == "1234")
     {
       this.router.navigate(['/options-d']);
     };            
