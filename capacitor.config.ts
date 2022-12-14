@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Registraap',
+  appId: 'com.example.app',
+  appName: 'Registraap2.0',
   webDir: 'www',
   bundledWebRuntime: false
 };

@@ -3,10 +3,10 @@ instalar servidor json
 npm i -g json-server
 
 ejecutar servidor
-json-server --watch datos.json
+json-server --watch base.json
 
 Consultas:
-http://localhost:3000/usuarios
+http://localhost:3000/alumno 
 http://localhost:3000/sucursales
 http://localhost:3000/sucursales/7
 http://localhost:3000/usuarios/5
